@@ -135,27 +135,29 @@
                 var subject = document.getElementById("subject-field").value;
                 var message = document.getElementById("message-field").value;
 
-                emailjs.send("service_4s3ohgq", "template_kmcrv43", { "message": message, "subject": subject, "reply_to": from_email }, "user_MPtS5JPK7tXvTvJCNDXvM")
-                    .then(function (response) {
-                        document.getElementById("contact-form-button-text").innerText = "Thank you!";
-                        setTimeout(function () {
-                            document.getElementById("contact-form-button-text").style.opacity = 0;
+                if (from_email != "" && subject != "" && message != "") {
+                    emailjs.send("service_4s3ohgq", "template_kmcrv43", { "message": message, "subject": subject, "reply_to": from_email }, "user_MPtS5JPK7tXvTvJCNDXvM")
+                        .then(function (response) {
+                            document.getElementById("contact-form-button-text").innerText = "Thank you!";
                             setTimeout(function () {
-                                document.getElementById("contact-form-button-text").innerText = "Submit >";
-                                document.getElementById("contact-form-button-text").style.opacity = 1;
-                            }, 300);
-                        }, 2000);
-                    }).catch (error => {
-                        console.log(error);
-                        document.getElementById("contact-form-button-text").innerText = "Failed to send";
-                        setTimeout(function () {
-                            document.getElementById("contact-form-button-text").style.opacity = 0;
+                                document.getElementById("contact-form-button-text").style.opacity = 0;
+                                setTimeout(function () {
+                                    document.getElementById("contact-form-button-text").innerText = "Submit >";
+                                    document.getElementById("contact-form-button-text").style.opacity = 1;
+                                }, 300);
+                            }, 2000);
+                        }).catch(error => {
+                            console.log(error);
+                            document.getElementById("contact-form-button-text").innerText = "Failed to send";
                             setTimeout(function () {
-                                document.getElementById("contact-form-button-text").innerText = "Submit >";
-                                document.getElementById("contact-form-button-text").style.opacity = 1;
-                            }, 300);
-                        }, 2000);
-                    });
+                                document.getElementById("contact-form-button-text").style.opacity = 0;
+                                setTimeout(function () {
+                                    document.getElementById("contact-form-button-text").innerText = "Submit >";
+                                    document.getElementById("contact-form-button-text").style.opacity = 1;
+                                }, 300);
+                            }, 2000);
+                        });
+                }                
             });
         </script>
     </body>
