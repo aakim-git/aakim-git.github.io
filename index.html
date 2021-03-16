@@ -4,15 +4,35 @@
     <link rel="stylesheet" href="base.css?v=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="site.js"></script>
 </head>
 
     <body>
         <header>
-            <ul class="dropdown-menu">
-                <li class="dropdown-item"><a class="active" href="index.html">Home</a></li>
-                <li class="dropdown-item"><a href="work.html">Work</a></li>
-                <li class="dropdown-item"><a href="blog.html">Blog</a></li>
-            </ul>
+            <div class="desktop">
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a class="active" href="index.html">Home</a></li>
+                    <li class="dropdown-item"><a href="work.html">Work</a></li>
+                    <li class="dropdown-item"><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="mobile mobile-header">
+                <div class="icon-container">
+                    <div id="menu-icon">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                    </div>
+                </div>
+                <div class="mobile-menu-list">
+                    <ul class="menu">
+                        <li class="menu-item"> <a href="index.html">Home</a> </li>
+                        <li class="menu-item"> <a href="work.html">Work</a> </li>
+                        <li class="menu-item"> <a href="blog.html">Blog</a> </li>
+                    </ul>
+                </div>
+            </div>
         </header>
 
         <section class="me">
@@ -20,23 +40,25 @@
             <p>Software Developer</p>
             <div class="social-media-links">
                 <div class="tooltip-container">
-                    <a href="https://www.facebook.com/profile.php?id=100008288581323" target="_blank"><img src="assets/facebook-icon.png" /></a>
-                    <span class="tooltip-text">Facebook</span>
-                </div>
-
-                <div class="tooltip-container">
-                    <a href="mailto: aaron.junghae.kim@gmail.com"><img src="assets/email-icon.png" /></a>
-                    <span class="tooltip-text" style=" margin-left: -130px; width: 250px;">aaron.junghae.kim@gmail.com</span>
-                </div>
-
-                <div class="tooltip-container">
-                    <a href="https://www.linkedin.com/in/aakim/" target="_blank"><img src="assets/linkedin-icon.png" /></a>
+                    <a href="https://www.linkedin.com/in/aakim/" target="_blank"><img src="assets/linkedin-icon.svg" /></a>
                     <span class="tooltip-text">LinkedIn</span>
                 </div>
 
+                <div class="email tooltip-container">
+                    <a href="mailto: aaron.junghae.kim@gmail.com"><img src="assets/email-icon.svg" /></a>
+                    <span class="tooltip-text">aaron.junghae.kim@gmail.com</span>
+                </div>
+
+
                 <div class="tooltip-container">
-                    <a href="assets/resume 3.15.2021.pdf" target="_blank"><img src="assets/resume-icon.png" /></a>
+                    <a href="assets/resume 3.15.2021.pdf" target="_blank"><img src="assets/resume-icon.svg" /></a>
                     <span class="tooltip-text">Resume</span>
+                </div>
+
+
+                <div class="tooltip-container">
+                    <a href="https://github.com/aakim-git" target="_blank"><img src="assets/github-icon.svg" /></a>
+                    <span class="tooltip-text">GitHub</span>
                 </div>
             </div>
             <hr class="squiggly" />
@@ -45,11 +67,8 @@
         <section class="about">
             <h1>About</h1>
             <p>
-                Hi! I'm Aaron Kim, an aspiring Software Engineer/Full-Stack  Developer.
-                My goal is to make life easier for others - not only for clients but for
-                those around me; I'm passionate about creative and thoughtful problem
-                solving and effective collaboration. I'm currently open to opportunities
-                and always open for a quick conversation :)
+                Hi, I'm Aaron! I'm a web applications programmer and full stack developer currently working at Aria Communications in Davis. I write code for people, whether that's building a beautiful interface for clients, or working with others in the back. I believe that code is so much more than finishing a task.                <br /><br />
+                While I'm not working, I'm playing music, trying to bake the next big thing, or enjoying board games with my friends.
             </p>
             <div class="image-container">
                 <img src="assets/me.jpg" />
@@ -60,45 +79,78 @@
 
         <section class="contact">
             <h1>Contact</h1>
-            <p> Shoot me a message! Or reach me from outside using the links below.</p>
-            <form>
+            <p> Shoot me a message! Or contact me using the links below.</p>
+            <form id="contact-form">
                 <div class="form-group">
-                    <h2>Email</h2>
-                    <input type="text" />
+                    <label for="email-field">Email</label>
+                    <input id="email-field" type="text" />
                 </div>
                 <div class="form-group">
-                    <h2>Subject</h2>
-                    <input type="text" />
+                    <label for="subject-field">Subject</label>
+                    <input id="subject-field" type="text" />
                 </div>
                 <div class="form-group" style="margin-bottom: 0;">
-                    <h2>Message</h2>
-                    <textarea rows="5"></textarea>
+                    <label for="message-field">Message</label>
+                    <textarea id="message-field" rows="5"></textarea>
                 </div>
-                <button> Submit > </button>
+                <button type="submit"> <span id="contact-form-button-text" style="transition: 0.3s all;">Submit ></span> </button>
             </form>
 
             <div class="social-media-links">
                 <div class="tooltip-container">
-                    <a href="https://www.facebook.com/profile.php?id=100008288581323" target="_blank"><img src="assets/facebook-icon.png" /></a>
-                    <span class="tooltip-text">Facebook</span>
-                </div>
-
-                <div class="tooltip-container">
-                    <a href="mailto: aaron.junghae.kim@gmail.com"><img src="assets/email-icon.png" /></a>
-                    <span class="tooltip-text" style=" margin-left: -130px; width: 250px;">aaron.junghae.kim@gmail.com</span>
-                </div>
-
-                <div class="tooltip-container">
-                    <a href="https://www.linkedin.com/in/aakim/" target="_blank"><img src="assets/linkedin-icon.png" /></a>
+                    <a href="https://www.linkedin.com/in/aakim/" target="_blank"><img src="assets/linkedin-icon.svg" /></a>
                     <span class="tooltip-text">LinkedIn</span>
                 </div>
 
                 <div class="tooltip-container">
-                    <a href="assets/resume 3.15.2021.pdf" target="_blank"><img src="assets/resume-icon.png" /></a>
+                    <a href="mailto: aaron.junghae.kim@gmail.com"><img src="assets/email-icon.svg" /></a>
+                    <span class="tooltip-text" style=" margin-left: -130px; width: 250px;">aaron.junghae.kim@gmail.com</span>
+                </div>
+
+
+                <div class="tooltip-container">
+                    <a href="assets/resume 3.15.2021.pdf" target="_blank"><img src="assets/resume-icon.svg" /></a>
                     <span class="tooltip-text">Resume</span>
+                </div>
+
+
+                <div class="tooltip-container">
+                    <a href="https://github.com/aakim-git" target="_blank"><img src="assets/github-icon.svg" /></a>
+                    <span class="tooltip-text">GitHub</span>
                 </div>
             </div>
             <p class="contact-info"> Created and designed by <a class="squiggly-underline" style="font-weight: 600; color: black;" href="https://goo.gl/maps/4SCNzzBL1sSb3o2u5" target="_blank">Aaron Kim</a>. Davis, CA </p>
         </section>
+
+        <script>
+            document.getElementById("contact-form").addEventListener('submit', function (e) {
+                e.preventDefault();
+                var from_email = document.getElementById("email-field").value;
+                var subject = document.getElementById("subject-field").value;
+                var message = document.getElementById("message-field").value;
+
+                emailjs.send("service_4s3ohgq", "template_kmcrv43", { "message": message, "subject": subject, "reply_to": from_email }, "user_MPtS5JPK7tXvTvJCNDXvM")
+                    .then(function (response) {
+                        document.getElementById("contact-form-button-text").innerText = "Thank you!";
+                        setTimeout(function () {
+                            document.getElementById("contact-form-button-text").style.opacity = 0;
+                            setTimeout(function () {
+                                document.getElementById("contact-form-button-text").innerText = "Submit >";
+                                document.getElementById("contact-form-button-text").style.opacity = 1;
+                            }, 300);
+                        }, 2000);
+                    }).catch (error => {
+                        console.log(error);
+                        document.getElementById("contact-form-button-text").innerText = "Failed to send";
+                        setTimeout(function () {
+                            document.getElementById("contact-form-button-text").style.opacity = 0;
+                            setTimeout(function () {
+                                document.getElementById("contact-form-button-text").innerText = "Submit >";
+                                document.getElementById("contact-form-button-text").style.opacity = 1;
+                            }, 300);
+                        }, 2000);
+                    });
+            });
+        </script>
     </body>
 </html>

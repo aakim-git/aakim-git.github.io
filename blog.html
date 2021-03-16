@@ -8,9 +8,19 @@
 
     <body class="blog">
         <div>
-            <h1>BLOG</h1> <br/>
+            <h1>BLOG</h1> <br />
             <h2>(coming soon)</h2>
-            <a href="index.html">Go Home?</a>
+            <a href="index.html" id="blog-button">Go Home?</a>
         </div>
+
+        <script>
+            window.onload = function () {
+                setTimeout(function () {
+                    var button = document.getElementById("blog-button");
+                    button.className += "reveal";
+                }, 500);
+            }
+        </script>
     </body>
+
 </html>
