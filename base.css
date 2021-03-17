@@ -105,7 +105,7 @@ hr {
         color: #656565;
     }
 
-@media(max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .image-container p {
         margin-top: 0.5rem;
     }
@@ -122,7 +122,7 @@ hr {
     display: none;
 }
 
-@media(max-width: 768px){
+@media only screen and (max-width: 768px) {
     .desktop {
         display: none;
     }
@@ -314,7 +314,7 @@ section.me {
     margin-top: 10rem;
 }
 
-@media(max-width: 768px){
+@media only screen and (max-width: 768px) {
     section.me {
         margin-top: 6rem;
     }
@@ -459,7 +459,7 @@ section.contact {
         width: 250px;
     }
 
-    @media(max-width: 768px){
+    @media only screen and (max-width: 768px){
         .email.tooltip-container .tooltip-text {
             margin-left: -60px;
         }
@@ -476,7 +476,7 @@ section.resume {
     margin-top: 10rem;
 }
 
-@media(max-width: 768px) {
+@media only screen and (max-width: 768px) {
     section.resume {
         margin-top: 6rem;
     }
@@ -499,7 +499,7 @@ section.resume {
     }
 
 
-    @media(max-width: 768px) {
+    @media only screen and (max-width: 768px) {
         section.resume hr {
             margin-top: 3rem;
             margin-bottom: 3rem;
@@ -532,7 +532,7 @@ section.lango {
         height: 0.4px;
     }
 
-    @media(max-width: 768px) {
+    @media only screen and (max-width: 768px) {
         section.lango hr {
             margin-top: 3rem;
             margin-bottom: 3rem;
@@ -553,7 +553,7 @@ section.chatbox {
         line-height: 30px;
     }
 
-@media(max-width: 768px) {
+@media only screen and (max-width: 768px) {
     section.lango img, section.chatbox img {
         width: 100%;
         height: initial;
@@ -633,7 +633,7 @@ body.blog a:hover {
 }
 
 
-@media(max-width: 768px) {
+@media only screen and (max-width: 768px) {
     body.blog h1 {
         color: white;
         font-size: 75px;
