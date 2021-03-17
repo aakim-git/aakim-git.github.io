@@ -596,6 +596,7 @@ body.blog h1 {
     font-size: 150px;
     font-family: initial;
     position: relative;
+    font-family: 'Times New Roman';
 }
 
 body.blog h1::before {
@@ -620,6 +621,7 @@ body.blog a {
     padding: 0 1rem;
     transition: padding 0.3s, margin-top 0.5s, opacity 0.3s;
     opacity: 0;
+    line-height:30px;
 }
 
 
@@ -630,6 +632,13 @@ body.blog a {
 
 body.blog a:hover {
     padding: 0 4rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+    body.blog a {
+        padding: 0 4rem;
+    }
 }
 
 
