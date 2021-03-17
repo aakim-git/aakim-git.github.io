@@ -605,7 +605,6 @@ body.blog h1::before {
     top: -4.5rem;
     left: 0;
     font-size: 15px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 body.blog h2 {
@@ -621,7 +620,10 @@ body.blog a {
     padding: 0 1rem;
     transition: padding 0.3s, margin-top 0.5s, opacity 0.3s;
     opacity: 0;
-    line-height:30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -646,7 +648,6 @@ body.blog a:hover {
     body.blog h1 {
         color: white;
         font-size: 75px;
-        font-family: initial;
         position: relative;
     }
 
